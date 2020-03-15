@@ -1,0 +1,15 @@
+<% if model.errors.any? %>
+  <div class="alert alert-warning">
+  	<% if model.errors.count > 1 %>
+  		<%= model.errors.count %> errors
+  	<% else %>
+  		1 error
+  	<% end %>
+  	prohibited this book from being saved:
+    <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
